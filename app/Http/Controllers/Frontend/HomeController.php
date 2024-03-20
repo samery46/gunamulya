@@ -34,7 +34,7 @@ class HomeController extends Controller
         $about = About::first();
         $portfolioTitle = PortfolioSectionSetting::first();
         $portfolioCategories = Category::all();
-        $portfolioItems = PortfolioItem::all();
+        $portfolioItems = PortfolioItem::latest()->take(9)->get();
         $skill = SkillSectionSetting::first();
         $skillItems = SkillItem::all();
         $experience = Experienace::first();
@@ -43,7 +43,8 @@ class HomeController extends Controller
         $blogs = Blog::latest()->take(5)->get();
         $blogTitle = BlogSectionSetting::first();
         $contactTitle = ContactSectionSetting::first();
-        return view('frontend.home',
+        return view(
+            'frontend.home',
             compact(
                 'hero',
                 'typerTitles',
@@ -60,10 +61,12 @@ class HomeController extends Controller
                 'blogs',
                 'blogTitle',
                 'contactTitle'
-            ));
+            )
+        );
     }
 
-    public function showPortfolio($id){
+    public function showPortfolio($id)
+    {
         $portfolio = PortfolioItem::findOrFail($id);
         return view('frontend.portfolio-details', compact('portfolio'));
     }
@@ -84,16 +87,15 @@ class HomeController extends Controller
 
     public function contact(Request $request)
     {
-       $request->validate([
+        $request->validate([
             'name' => ['required', 'max:200'],
             'subject' => ['required', 'max:300'],
             'email' => ['required', 'email'],
             'message' => ['required', 'max:2000'],
-       ]);
+        ]);
 
-       Mail::send(new ContactMail($request->all()));
+        Mail::send(new ContactMail($request->all()));
 
-       return response(['status' => 'success', 'message' => 'Mail Sended Successfully!']);
-
+        return response(['status' => 'success', 'message' => 'Mail Sended Successfully!']);
     }
 }

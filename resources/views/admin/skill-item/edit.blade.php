@@ -6,7 +6,7 @@
       <div class="section-header-back">
         <a href="features-posts.html" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
       </div>
-      <h1>Skill Item</h1>
+      <h1>Project Item</h1>
 
     </div>
 
@@ -15,7 +15,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4>Edit Skill Item</h4>
+              <h4>Edit Project Item</h4>
             </div>
             <div class="card-body">
                 <form action="{{route('admin.skill-item.update', $skill->id)}}" method="POST" enctype="multipart/form-data">

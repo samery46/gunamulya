@@ -59,10 +59,9 @@ class PortfolioItemController extends Controller
         $portfolioItem->website = $request->website;
         $portfolioItem->save();
 
-        toastr()->success('Profile Item Created Successfully!', 'Success');
+        toastr()->success('Portofolio Item Created Successfully!', 'Success');
 
         return redirect()->route('admin.portfolio-item.index');
-
     }
 
     /**
@@ -119,7 +118,7 @@ class PortfolioItemController extends Controller
         $portfolioItem->website = $request->website;
         $portfolioItem->save();
 
-        toastr()->success('Profile Item Updated Successfully!', 'Success');
+        toastr()->success('Portofolio Item Updated Successfully!', 'Success');
 
         return redirect()->route('admin.portfolio-item.index');
     }

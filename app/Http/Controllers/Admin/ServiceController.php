@@ -39,7 +39,7 @@ class ServiceController extends Controller
     {
         $request->validate([
             'name' => ['required', 'max:200'],
-            'description' => ['required', 'max:500']
+            'description' => ['required', 'max:700']
         ]);
 
         $service = new Service();
@@ -86,7 +86,7 @@ class ServiceController extends Controller
     {
         $request->validate([
             'name' => ['required', 'max:200'],
-            'description' => ['required', 'max:500']
+            'description' => ['required', 'max:700']
         ]);
 
         $service = Service::findOrFail($id);

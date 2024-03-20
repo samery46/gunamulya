@@ -76,9 +76,9 @@ class ExperienceController extends Controller
         $request->validate([
             'image' => ['image', 'max:5000'],
             'title' => ['required', 'max:200'],
-            'description' => ['required', 'max:1000'],
+            'description' => ['required', 'max:2000'],
             'phone' => ['nullable', 'max:100'],
-            'email' => ['nullable', 'max:100', 'email']
+            'email' => ['nullable', 'max:100']
         ]);
 
         $experience = Experienace::find($id);
@@ -87,18 +87,17 @@ class ExperienceController extends Controller
         Experienace::updateOrCreate(
             ['id' => $id],
             [
-               'image' => (!empty($imagePath) ? $imagePath : $experience->image),
-               'title' => $request->title,
-               'description' => $request->description,
-               'phone' => $request->phone,
-               'email' => $request->email
+                'image' => (!empty($imagePath) ? $imagePath : $experience->image),
+                'title' => $request->title,
+                'description' => $request->description,
+                'phone' => $request->phone,
+                'email' => $request->email
             ]
         );
 
         toastr('Updated Successfully!', 'success');
 
         return redirect()->back();
-
     }
 
     /**
