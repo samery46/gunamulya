@@ -8,26 +8,28 @@
             </div>
             <div class="col-lg-6">
                 <div class="experience-text">
-                    <h3 class="title wow fadeInUp" data-wow-delay="0.3s">{{ $experience->title }}</h3>
+                    {{-- <h3 class="title wow fadeInUp" data-wow-delay="0.3s">{{ $experience->title }}</h3> --}}
                     <div class="desc wow fadeInUp" data-wow-delay="0.4s">
                         {!! $experience->description !!}
                     </div>
+                    {{--
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="icon-info wow fadeInUp" data-wow-delay="0.3s">
                                 <div class="icon"><i class="fas fa-file"></i></div>
                                 <h6><a href="{{ $experience->phone }}" class="text">Download CV</a></h6>
-                                {{-- <h6><a href="javascript:void(0)" class="text">{{ $experience->phone }}</a>Download CV</h6> --}}
+                                <h6><a href="javascript:void(0)" class="text">{{ $experience->phone }}</a>Download CV</h6>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="icon-info wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="icon"><i class="fas fa-download"></i></div>
                                 <h6><a href="{{ $experience->email }}" class="text">See Certificate</a></h6>
-                                {{-- <h6><a href="javascript:void(0)" class="text">{{ $experience->email }}</a>See Certificate</h6> --}}
+                                <h6><a href="javascript:void(0)" class="text">{{ $experience->email }}</a>See Certificate</h6>
                             </div>
                         </div>
                     </div>
+                    --}}
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<section class="portfolio-area section-padding-top" id="portofolio-page">
+<section class="portfolio-area section-padding-top" id="project-page">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3 text-center">

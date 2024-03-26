@@ -16,7 +16,7 @@ class ContactSectionSettingController extends Controller
     public function index()
     {
         $contactTitle = ContactSectionSetting::first();
-       return view('admin.contact-setting.index', compact('contactTitle'));
+        return view('admin.contact-setting.index', compact('contactTitle'));
     }
 
     /**
@@ -73,7 +73,7 @@ class ContactSectionSettingController extends Controller
     {
         $request->validate([
             'title' => ['required', 'max:200'],
-            'sub_title' => ['required', 'max:500']
+            'sub_title' => ['required', 'max:2`000']
         ]);
 
         ContactSectionSetting::updateOrCreate(

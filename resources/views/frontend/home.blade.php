@@ -9,16 +9,16 @@
     @include('frontend.sections.about')
     <!-- About-Area-End -->
 
-    <!-- Service-Area-Start -->
-    @include('frontend.sections.service')
-    <!-- Service-Area-End -->
-
     <!-- Experience-Area-Start -->
     @include('frontend.sections.experience')
     <!-- Experience-Area-End -->
 
+    <!-- Service-Area-Start -->
+    @include('frontend.sections.service')
+    <!-- Service-Area-End -->
+
     <!-- Skills-Area-Start -->
-    @include('frontend.sections.skill')
+    {{-- @include('frontend.sections.skill') --}}
     <!-- Skills-Area-End -->
 
     <!-- Portfolio-Area-Start -->
