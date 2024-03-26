@@ -61,15 +61,18 @@
             <li class="{{ setSidebarActive(['admin.about.*']) }}"><a class="nav-link"
                     href="{{ route('admin.about.index') }}"><i class="far fa-square"></i> <span>About</span></a></li>
 
-            <li class="{{ setSidebarActive(['admin.service.*']) }}"><a class="nav-link"
-                    href="{{ route('admin.service.index') }}"><i class="far fa-square"></i> <span>Services</span></a>
-            </li>
 
             <li class="{{ setSidebarActive(['admin.experience.*']) }}"><a class="nav-link"
                     href="{{ route('admin.experience.index') }}"><i class="far fa-square"></i>
                     <span>Background</span></a></li>
 
-            <li
+
+            <li class="{{ setSidebarActive(['admin.service.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.service.index') }}"><i class="far fa-square"></i> <span>Services</span></a>
+            </li>
+
+
+            {{-- <li
                 class="nav-item dropdown {{ setSidebarActive(['admin.skill-item.*', 'admin.skill-section-setting.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Our Project</span></a>
@@ -79,7 +82,7 @@
                     <li class="{{ setSidebarActive(['admin.skill-section-setting.*']) }}"><a class="nav-link"
                             href="{{ route('admin.skill-section-setting.index') }}">Section Setting</a></li>
                 </ul>
-            </li>
+            </li> --}}
 
             <li
                 class="nav-item dropdown {{ setSidebarActive(['admin.category.*', 'admin.portfolio-item.*', 'admin.portfolio-section-setting.*']) }}">
@@ -112,8 +115,8 @@
                     'admin.footer-useful-links.*',
                     'admin.footer-help-links.*',
                 ]) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                        class="fas fa-columns"></i> <span>Footer</span></a>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Footer</span></a>
                 <ul class="dropdown-menu" style="display: none;">
                     <li class="{{ setSidebarActive(['admin.footer-social.*']) }}"><a class="nav-link"
                             href="{{ route('admin.footer-social.index') }}">Social Links</a></li>
@@ -128,7 +131,7 @@
                 </ul>
             </li>
 
-            <li
+            {{-- <li
                 class="nav-item dropdown {{ setSidebarActive(['admin.feedback.*', 'admin.feedback-section-setting.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                         class="fas fa-columns"></i>
@@ -139,7 +142,7 @@
                     <li class="{{ setSidebarActive(['admin.feedback-section-setting.*']) }}"><a class="nav-link"
                             href="{{ route('admin.feedback-section-setting.index') }}">Section Setting</a></li>
                 </ul>
-            </li>
+            </li> --}}
 
             <li
                 class="nav-item dropdown {{ setSidebarActive(['admin.blog-category.*', 'admin.blog.*', 'admin.blog-section-setting.*']) }}">

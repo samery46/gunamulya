@@ -15,7 +15,7 @@
                 </li>
                 @if (Route::currentRouteName() == 'home')
                     <li class="nav-item">
-                        <a class="nav-link" href="#about-page">About</a>
+                        <a class="nav-link" href="#about-page">About Us</a>
                     </li>
 
                     <li class="nav-item">
@@ -23,7 +23,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#portofolio-page">Project</a>
+                        <a class="nav-link" href="#project-page">Project</a>
                     </li>
 
                     <li class="nav-item">

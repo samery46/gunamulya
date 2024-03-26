@@ -1,11 +1,15 @@
-<header class="header-area parallax-bg" id="home-page"
-    style="background: url('{{ asset($hero->image) }}') no-repeat scroll top center/cover">
+<header class="header-area parallax-bg" id="home-page" {{-- style="background: url('{{ asset($hero->image) }}') no-repeat scroll top center/cover" --}}>
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
                 <div class="header-text">
-                    <h3 class="typer-title wow fadeInUp" data-wow-delay="0.5s">Company Profile</h3>
-                    <h1 class="title wow fadeInUp" data-wow-delay="0.3s">{{ $hero->title }}</h1>
+                    <h3 class="typer-title wow fadeInUp" data-wow-delay="0.5s"></h3>
+                    <div class="col-lg-11 d-none d-lg-block">
+                        <figure class="single-image wow fadeInLeft">
+                            <img src="{{ asset($hero->image) }}" alt="">
+                        </figure>
+                    </div>
+                    {{-- <h1 class="title wow fadeInUp" data-wow-delay="0.3s">{{ $hero->title }}</h1> --}}
                     <div class="desc wow fadeInUp" data-wow-delay="0.4s">
                         <p>{!! $hero->sub_title !!}</p>
                     </div>
