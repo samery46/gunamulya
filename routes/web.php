@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSetting;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
+use App\Http\Controllers\Admin\PortofolioGalleryController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SeoSettingController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -63,11 +64,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
-Route::get('dashboard',[DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function(){
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
 
     /** Hero Route */
     Route::resource('hero', HeroController::class);
@@ -87,6 +88,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     /** Portfolio Section Setting Route */
     Route::resource('portfolio-section-setting', PortfolioSectionSettingController::class);
+
+    /** Portfolio Gallery Route */
+    Route::get('portofolio-gallery/{portfolio_item}', [PortofolioGalleryController::class, 'index'])->name('portofolio-gallery.show-index');
+    Route::resource('portofolio-gallery', PortofolioGalleryController::class);
 
     /** Skill Section Setting Route */
     Route::resource('skill-section-setting', SkillSectionSettingController::class);
@@ -138,5 +143,4 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     /** Seo setting Route */
     Route::resource('seo-setting', SeoSettingController::class);
-
 });

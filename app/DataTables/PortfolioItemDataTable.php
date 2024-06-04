@@ -23,18 +23,19 @@ class PortfolioItemDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('image', function($query){
-                return '<img style="width:70px" src="'.asset($query->image).'"></img>';
+            ->addColumn('image', function ($query) {
+                return '<img style="width:70px" src="' . asset($query->image) . '"></img>';
             })
-            ->addColumn('created_at', function($query){
+            ->addColumn('created_at', function ($query) {
                 return date('d-m-Y', strtotime($query->created_at));
             })
-            ->addColumn('category', function($query){
+            ->addColumn('category', function ($query) {
                 return $query->category->name;
             })
-            ->addColumn('action', function($query){
-                return '<a href="'.route('admin.portfolio-item.edit', $query->id).'" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                <a href="'.route('admin.portfolio-item.destroy', $query->id).'" class="btn btn-danger delete-item"><i class="fas fa-trash"></i></a>';
+            ->addColumn('action', function ($query) {
+                return '<a href="' . route('admin.portfolio-item.edit', $query->id) . '" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                <a href="' . route('admin.portofolio-gallery.show-index', $query->id) . '" class="btn btn-primary"><i class="fas fa-cog"></i></a>
+                <a href="' . route('admin.portfolio-item.destroy', $query->id) . '" class="btn btn-danger delete-item"><i class="fas fa-picture-o"></i></a>';
             })
             ->rawColumns(['image', 'action'])
             ->setRowId('id');
@@ -59,20 +60,20 @@ class PortfolioItemDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('portfolioitem-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    //->dom('Bfrtip')
-                    ->orderBy(0)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+            ->setTableId('portfolioitem-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            //->dom('Bfrtip')
+            ->orderBy(0)
+            ->selectStyleSingle()
+            ->buttons([
+                Button::make('excel'),
+                Button::make('csv'),
+                Button::make('pdf'),
+                Button::make('print'),
+                Button::make('reset'),
+                Button::make('reload')
+            ]);
     }
 
     /**
@@ -90,10 +91,10 @@ class PortfolioItemDataTable extends DataTable
             Column::make('category'),
             Column::make('created_at'),
             Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(200)
-                  ->addClass('text-center'),
+                ->exportable(false)
+                ->printable(false)
+                ->width(200)
+                ->addClass('text-center'),
         ];
     }
 

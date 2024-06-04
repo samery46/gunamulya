@@ -13,11 +13,10 @@
         <div class="row">
             <div class="col-sm-12">
                 <ul class="filter-menu">
-                    <li class="active" data-filter="*">All Projects</li>
+                    {{-- <li class="active" data-filter="*">All Projects</li> --}}
                     @foreach ($portfolioCategories as $category)
                         <li data-filter=".{{ $category->slug }}">{{ $category->name }}</li>
                     @endforeach
-
                 </ul>
             </div>
         </div>

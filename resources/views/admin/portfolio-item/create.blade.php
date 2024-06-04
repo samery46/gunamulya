@@ -59,18 +59,22 @@
                                 </div>
 
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Client</label>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tahun</label>
                                     <div class="col-sm-12 col-md-7">
                                         <input type="text" name="client" class="form-control" value="">
                                     </div>
                                 </div>
 
-                                <div class="form-group row mb-4">
+                                {{-- <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Website</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" name="website" class="form-control" value="">
+                                        <input type="text" name="website" class="form-control" value="https://gunamulyacahaya.com/">
                                     </div>
-                                </div>
+                                </div> --}}
+
+                                <!-- Input yang disembunyikan -->
+                                <input type="hidden" name="website" id="websiteInput" class="form-control"
+                                    value="https://gunamulyacahaya.com/">
 
 
                                 <div class="form-group row mb-4">
