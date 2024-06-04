@@ -1,4 +1,5 @@
-<header class="header-area parallax-bg" id="home-page" {{-- style="background: url('{{ asset($hero->image) }}') no-repeat scroll top center/cover" --}}>
+<header class="header-area parallax-bg" id="home-page"
+    style="background: url('{{ asset($hero->image) }}') no-repeat scroll top center/cover">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -6,7 +7,8 @@
                     <h3 class="typer-title wow fadeInUp" data-wow-delay="0.5s"></h3>
                     <div class="col-lg-11 d-none d-lg-block">
                         <figure class="single-image wow fadeInLeft">
-                            <img src="{{ asset($hero->image) }}" alt="">
+                            {{-- <img src="{{ asset($hero->image) }}" alt=""> --}}
+                            <img src="{{ asset($generalSetting->logo) }}" alt="">
                         </figure>
                     </div>
                     {{-- <h1 class="title wow fadeInUp" data-wow-delay="0.3s">{{ $hero->title }}</h1> --}}

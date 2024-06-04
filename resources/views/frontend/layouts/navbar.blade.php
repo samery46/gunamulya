@@ -32,9 +32,9 @@
                 @endif
 
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('blog') }}">Blogs</a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>

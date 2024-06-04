@@ -12,6 +12,7 @@ use App\Models\ContactSectionSetting;
 use App\Models\Experienace;
 use App\Models\Feedback;
 use App\Models\FeedbackSectionSetting;
+use App\Models\GeneralSetting;
 use App\Models\Hero;
 use App\Models\PortfolioItem;
 use App\Models\PortfolioSectionSetting;
@@ -34,7 +35,8 @@ class HomeController extends Controller
         $about = About::first();
         $portfolioTitle = PortfolioSectionSetting::first();
         $portfolioCategories = Category::all();
-        $portfolioItems = PortfolioItem::latest()->take(9)->get();
+        // $portfolioItems = PortfolioItem::latest()->take(9)->get();
+        $portfolioItems = PortfolioItem::all();
         $skill = SkillSectionSetting::first();
         $skillItems = SkillItem::all();
         $experience = Experienace::first();
@@ -43,6 +45,7 @@ class HomeController extends Controller
         $blogs = Blog::latest()->take(5)->get();
         $blogTitle = BlogSectionSetting::first();
         $contactTitle = ContactSectionSetting::first();
+        $generalSetting = GeneralSetting::first();
         return view(
             'frontend.home',
             compact(
@@ -60,7 +63,8 @@ class HomeController extends Controller
                 'feedbackTitle',
                 'blogs',
                 'blogTitle',
-                'contactTitle'
+                'contactTitle',
+                'generalSetting'
             )
         );
     }
